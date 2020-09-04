@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow, react/no-array-index-key */
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
 import { FormGroup, InputGroup, Classes, NumericInput, Intent } from '@blueprintjs/core';
@@ -67,7 +68,7 @@ export default function TextWidget({
             minorStepSize={null}
             majorStepSize={null}
             onValueChange={(_valueAsNumber, valueAsString) => {
-              onChange(parseInt(valueAsString));
+              onChange(parseInt(valueAsString, 10));
             }}
             defaultValue={schema.default ? (schema.default as string) : undefined}
             buttonPosition={myOptions.isUpDown ? undefined : 'none'}

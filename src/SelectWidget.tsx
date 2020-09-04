@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-shadow, react/no-array-index-key */
 import React from 'react';
 import { FormGroup, HTMLSelect, Classes } from '@blueprintjs/core';
 import { WidgetProps } from '@rjsf/core';
@@ -29,17 +29,11 @@ export default function SelectWidget({
       </ul>
     ) : undefined;
 
-  const _onChange = ({
-    target: { value },
-  }: React.ChangeEvent<HTMLSelectElement>) => onChange(value);
+  const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLSelectElement>) => onChange(value);
 
-  const _onBlur = ({
-    target: { value },
-  }: React.FocusEvent<HTMLSelectElement>) => onBlur(id, value);
+  const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLSelectElement>) => onBlur(id, value);
 
-  const _onFocus = ({
-    target: { value },
-  }: React.FocusEvent<HTMLSelectElement>) => onFocus(id, value);
+  const _onFocus = ({ target: { value } }: React.FocusEvent<HTMLSelectElement>) => onFocus(id, value);
 
   return (
     <FormGroup

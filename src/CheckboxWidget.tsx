@@ -1,7 +1,8 @@
-/* eslint-disable */
+/* eslint-disable no-shadow, react/no-array-index-key */
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
 import { FormGroup, Checkbox, Classes } from '@blueprintjs/core';
+import { UIOptions } from './types';
 
 export default function CheckboxWidget({
   id,

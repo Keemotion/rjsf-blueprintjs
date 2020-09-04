@@ -1,8 +1,8 @@
-import { ThemeProps, utils } from "@rjsf/core";
-import ObjectFieldTemplate from "./ObjectFieldTemplate";
-import FieldTemplate from "./FieldTemplate";
-import Fields from "./Fields";
-import Widgets from "./Widgets";
+import { ThemeProps, utils } from '@rjsf/core';
+import ObjectFieldTemplate from './ObjectFieldTemplate';
+import FieldTemplate from './FieldTemplate';
+import Fields from './Fields';
+import Widgets from './Widgets';
 
 const { fields, widgets } = utils.getDefaultRegistry();
 

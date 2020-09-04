@@ -1,4 +1,4 @@
-import DescriptionField from "./DescriptionField";
+import DescriptionField from './DescriptionField';
 
 /**
  * TODO:
