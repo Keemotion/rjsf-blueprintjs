@@ -2,3 +2,6 @@ src
 .gitignore
 tsconfig.json
 yarn.lock
+.prettierrc
+.eslintrc.js
+.eslintignore
