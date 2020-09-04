@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-shadow, react/no-array-index-key */
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
 import { FormGroup, InputGroup, Classes, NumericInput, Intent } from '@blueprintjs/core';
@@ -18,11 +18,9 @@ export default function TextWidget({
   options,
   schema,
   placeholder,
-  ...props
+  rawErrors,
 }: WidgetProps) {
   const myOptions = options as UIOptions;
-  // I contributed to update this lying type declaration, it's merged on master and will be in their next release
-  const rawErrors: string[] = (props as any).rawErrors;
   const helperText =
     rawErrors && rawErrors.length ? (
       <ul className={Classes.LIST}>
@@ -50,7 +48,12 @@ export default function TextWidget({
       onBlur: _onBlur,
       onFocus: _onFocus,
       autoFocus: autofocus,
-      value: value || '',
+      value: (() => {
+        if (typeof value === 'number') {
+          return String(value);
+        }
+        return value || '';
+      })(),
     };
 
     switch (schema.type) {
@@ -65,10 +68,12 @@ export default function TextWidget({
             minorStepSize={null}
             majorStepSize={null}
             onValueChange={(_valueAsNumber, valueAsString) => {
-              onChange(parseInt(valueAsString));
+              onChange(parseInt(valueAsString, 10));
             }}
+            defaultValue={schema.default ? (schema.default as string) : undefined}
             buttonPosition={myOptions.isUpDown ? undefined : 'none'}
             {...inputProps}
+            min={schema.minimum}
           />
         );
       case 'null':
@@ -82,6 +87,7 @@ export default function TextWidget({
       intent={rawErrors && rawErrors.length ? 'danger' : undefined}
       helperText={helperText}
       label={myOptions.title || label || schema.title}
+      inline={myOptions.inline}
       labelFor={id}
       labelInfo={required ? '(required)' : undefined}
     >

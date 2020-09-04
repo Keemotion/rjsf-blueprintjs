@@ -1,7 +1,8 @@
-/* eslint-disable */
+/* eslint-disable no-shadow, react/no-array-index-key */
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
 import { FormGroup, Checkbox, Classes } from '@blueprintjs/core';
+import { UIOptions } from './types';
 
 export default function CheckboxWidget({
   id,
@@ -16,10 +17,9 @@ export default function CheckboxWidget({
   autofocus,
   options,
   schema,
-  placeholder,
-  ...props
+  rawErrors,
 }: WidgetProps) {
-  const rawErrors: string[] = (props as any).rawErrors;
+  const { inline } = options as UIOptions;
 
   const helperText =
     rawErrors && rawErrors.length ? (
@@ -42,6 +42,7 @@ export default function CheckboxWidget({
       helperText={helperText}
       label={label || schema.title}
       labelFor={id}
+      inline={inline}
       labelInfo={required ? '(required)' : undefined}
     >
       <Checkbox
@@ -49,6 +50,7 @@ export default function CheckboxWidget({
         checked={value}
         required={required}
         disabled={disabled || readonly}
+        autoFocus={autofocus}
         onChange={_onChange}
         onBlur={_onBlur}
         onFocus={_onFocus}

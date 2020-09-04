@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-shadow, react/no-array-index-key */
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
 import { TextArea, FormGroup, Classes } from '@blueprintjs/core';
@@ -17,9 +17,8 @@ export default function TextareaWidget({
   onChange,
   options,
   schema,
-  ...props
+  rawErrors,
 }: WidgetProps) {
-  const rawErrors: string[] = (props as any).rawErrors;
   const helperText =
     rawErrors && rawErrors.length ? (
       <ul className={Classes.LIST}>
@@ -29,16 +28,10 @@ export default function TextareaWidget({
       </ul>
     ) : undefined;
 
-  const _onChange = ({
-    target: { value },
-  }: React.ChangeEvent<HTMLTextAreaElement>) =>
+  const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLTextAreaElement>) =>
     onChange(value === '' ? options.emptyValue : value);
-  const _onBlur = ({
-    target: { value },
-  }: React.FocusEvent<HTMLTextAreaElement>) => onBlur(id, value);
-  const _onFocus = ({
-    target: { value },
-  }: React.FocusEvent<HTMLTextAreaElement>) => onFocus(id, value);
+  const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLTextAreaElement>) => onBlur(id, value);
+  const _onFocus = ({ target: { value } }: React.FocusEvent<HTMLTextAreaElement>) => onFocus(id, value);
 
   return (
     <FormGroup

@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-shadow, react/no-array-index-key */
 import React from 'react';
 import { FormGroup, HTMLSelect, Classes } from '@blueprintjs/core';
 import { WidgetProps } from '@rjsf/core';
@@ -17,11 +17,9 @@ export default function SelectWidget({
   autofocus,
   options,
   schema,
-  placeholder,
-  ...props
+  rawErrors,
 }: WidgetProps) {
-  const { enumOptions } = options as UIOptions;
-  const rawErrors: string[] = (props as any).rawErrors;
+  const { enumOptions, inline } = options as UIOptions;
   const helperText =
     rawErrors && rawErrors.length ? (
       <ul className={Classes.LIST}>
@@ -31,17 +29,11 @@ export default function SelectWidget({
       </ul>
     ) : undefined;
 
-  const _onChange = ({
-    target: { value },
-  }: React.ChangeEvent<HTMLSelectElement>) => onChange(value);
+  const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLSelectElement>) => onChange(value);
 
-  const _onBlur = ({
-    target: { value },
-  }: React.FocusEvent<HTMLSelectElement>) => onBlur(id, value);
+  const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLSelectElement>) => onBlur(id, value);
 
-  const _onFocus = ({
-    target: { value },
-  }: React.FocusEvent<HTMLSelectElement>) => onFocus(id, value);
+  const _onFocus = ({ target: { value } }: React.FocusEvent<HTMLSelectElement>) => onFocus(id, value);
 
   return (
     <FormGroup
@@ -50,8 +42,10 @@ export default function SelectWidget({
       label={options.title || label || schema.title}
       labelFor={id}
       labelInfo={required ? '(required)' : undefined}
+      inline={inline}
     >
       <HTMLSelect
+        autoFocus={autofocus}
         required={required}
         disabled={disabled || readonly}
         value={value}
