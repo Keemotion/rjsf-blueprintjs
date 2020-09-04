@@ -47,7 +47,12 @@ export default function TextWidget({
       onBlur: _onBlur,
       onFocus: _onFocus,
       autoFocus: autofocus,
-      value: value || '',
+      value: (() => {
+        if (typeof value === 'number') {
+          return String(value);
+        }
+        return value || '';
+      })(),
     };
 
     switch (schema.type) {
