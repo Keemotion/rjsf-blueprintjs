@@ -14,7 +14,6 @@
     "test": "tsdx test",
     "lint": "npx eslint --config ./.eslintrc.js --ext .js --ext .jsx --ext .ts --ext .tsx ./src"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "peerDependencies": {
     "@blueprintjs/core": "^3.28.0",
     "@blueprintjs/icons": "^3.18.0",
