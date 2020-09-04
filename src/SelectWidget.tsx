@@ -48,6 +48,7 @@ export default function SelectWidget({
       label={options.title || label || schema.title}
       labelFor={id}
       labelInfo={required ? '(required)' : undefined}
+      inline={inline}
     >
       <HTMLSelect
         required={required}

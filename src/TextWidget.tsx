@@ -79,6 +79,7 @@ export default function TextWidget({
       intent={rawErrors && rawErrors.length ? 'danger' : undefined}
       helperText={helperText}
       label={myOptions.title || label || schema.title}
+      inline={myOptions.inline}
       labelFor={id}
       labelInfo={required ? '(required)' : undefined}
     >

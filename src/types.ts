@@ -5,4 +5,5 @@ export interface UIOptions {
   title?: string;
   enumOptions?: any;
   enumDisabled?: boolean;
+  inline?: boolean;
 }

@@ -41,6 +41,7 @@ export default function CheckboxWidget({
       helperText={helperText}
       label={label || schema.title}
       labelFor={id}
+      inline={inline}
       labelInfo={required ? '(required)' : undefined}
     >
       <Checkbox
