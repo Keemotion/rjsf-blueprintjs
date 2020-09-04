@@ -51,6 +51,7 @@ export default function SelectWidget({
       inline={inline}
     >
       <HTMLSelect
+        autoFocus={autofocus}
         required={required}
         disabled={disabled || readonly}
         value={value}

@@ -69,8 +69,10 @@ export default function TextWidget({
             onValueChange={(_valueAsNumber, valueAsString) => {
               onChange(parseInt(valueAsString));
             }}
+            defaultValue={schema.default ? (schema.default as string) : undefined}
             buttonPosition={myOptions.isUpDown ? undefined : 'none'}
             {...inputProps}
+            min={schema.minimum}
           />
         );
       case 'null':
