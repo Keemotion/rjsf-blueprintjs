@@ -17,11 +17,9 @@ export default function SelectWidget({
   autofocus,
   options,
   schema,
-  placeholder,
-  ...props
+  rawErrors,
 }: WidgetProps) {
-  const { enumOptions } = options as UIOptions;
-  const rawErrors: string[] = (props as any).rawErrors;
+  const { enumOptions, inline } = options as UIOptions;
   const helperText =
     rawErrors && rawErrors.length ? (
       <ul className={Classes.LIST}>

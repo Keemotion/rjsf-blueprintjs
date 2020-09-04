@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
 import { FormGroup, InputGroup, Classes, NumericInput, Intent } from '@blueprintjs/core';
@@ -18,11 +17,9 @@ export default function TextWidget({
   options,
   schema,
   placeholder,
-  ...props
+  rawErrors,
 }: WidgetProps) {
   const myOptions = options as UIOptions;
-  // I contributed to update this lying type declaration, it's merged on master and will be in their next release
-  const rawErrors: string[] = (props as any).rawErrors;
   const helperText =
     rawErrors && rawErrors.length ? (
       <ul className={Classes.LIST}>

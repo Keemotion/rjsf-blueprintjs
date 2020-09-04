@@ -16,10 +16,9 @@ export default function CheckboxWidget({
   autofocus,
   options,
   schema,
-  placeholder,
-  ...props
+  rawErrors,
 }: WidgetProps) {
-  const rawErrors: string[] = (props as any).rawErrors;
+  const { inline } = options as UIOptions;
 
   const helperText =
     rawErrors && rawErrors.length ? (

@@ -17,9 +17,8 @@ export default function TextareaWidget({
   onChange,
   options,
   schema,
-  ...props
+  rawErrors,
 }: WidgetProps) {
-  const rawErrors: string[] = (props as any).rawErrors;
   const helperText =
     rawErrors && rawErrors.length ? (
       <ul className={Classes.LIST}>
