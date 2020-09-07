@@ -7,7 +7,7 @@ export default function ObjectFieldTemplate(props: ObjectFieldTemplateProps) {
   return (
     <div className={`schema-${idSchema.$id}`}>
       <H5>{title}</H5>
-      {description}
+      <p>{description}</p>
       {properties.map((element) => (
         <div key={element.name} className="property-wrapper">
           {element.content}
