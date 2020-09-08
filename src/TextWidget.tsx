@@ -32,6 +32,7 @@ export default function TextWidget({
       placeholder,
       disabled: disabled || readonly,
       required,
+      small: myOptions.small,
       onChange: _onChange,
       onBlur: _onBlur,
       onFocus: _onFocus,

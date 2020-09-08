@@ -2,6 +2,7 @@
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
 import { Checkbox } from '@blueprintjs/core';
+import { UIOptions } from './types';
 
 export default function CheckboxWidget({
   id,
@@ -13,13 +14,17 @@ export default function CheckboxWidget({
   onBlur,
   onFocus,
   autofocus,
+  options,
+  label,
 }: WidgetProps) {
+  const { alignIndicator } = options as UIOptions;
   const _onChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => onChange(checked);
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onBlur(id, value);
   const _onFocus = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onFocus(id, value);
   return (
     <Checkbox
       id={id}
+      label={label}
       checked={value}
       required={required}
       disabled={disabled || readonly}
@@ -27,6 +32,7 @@ export default function CheckboxWidget({
       onChange={_onChange}
       onBlur={_onBlur}
       onFocus={_onFocus}
+      alignIndicator={alignIndicator}
     />
   );
 }
