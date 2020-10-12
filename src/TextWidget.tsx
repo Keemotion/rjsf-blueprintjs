@@ -57,7 +57,7 @@ export default function TextWidget({
             minorStepSize={null}
             majorStepSize={null}
             onValueChange={(_valueAsNumber, valueAsString) => {
-              onChange(parseInt(valueAsString, 10));
+              onChange(valueAsString);
             }}
             defaultValue={schema.default ? (schema.default as string) : undefined}
             buttonPosition={myOptions.isUpDown ? undefined : 'none'}
