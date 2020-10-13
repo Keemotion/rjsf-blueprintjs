@@ -9,7 +9,7 @@ export default function RadioWidget(props: WidgetProps) {
   return (
     <RadioGroup disabled={disabled || readonly} onChange={_onChange} selectedValue={value}>
       {(options.enumOptions as any).map((it: any) => (
-        <Radio label={it.label} value={it.value} />
+        <Radio key={it.value} label={it.label} value={it.value} />
       ))}
     </RadioGroup>
   );
