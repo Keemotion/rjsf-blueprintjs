@@ -4,6 +4,11 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
+## 0.0.4 - 14-10-2020
+
+* Fix react warning related to missing key for item in list
+* Update function of numeric input use the string value instead of a parsed one that created bug
+
 ## 0.0.3 - 08-09-2020
 
 * Optimize markup and remove redundancy

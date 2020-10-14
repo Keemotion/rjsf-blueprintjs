@@ -1,6 +1,6 @@
 {
   "name": "@keemotion/rjsf-blueprintjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "module": "dist/blueprintjs.esm.js",
   "typings": "dist/index.d.ts",
@@ -60,7 +60,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "author": "Benjamin Bours <benjamin.bours@keemotion.com>",
+  "author": "Benjamin Bours <benjamin.bours@synergysports.com>",
   "keywords": [
     "blueprint",
     "blueprintjs",
