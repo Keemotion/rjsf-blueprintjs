@@ -1,4 +1,5 @@
 import DescriptionField from './DescriptionField';
+import CustomField from './CustomField';
 
 /**
  * TODO:
@@ -7,4 +8,5 @@ import DescriptionField from './DescriptionField';
 
 export default {
   DescriptionField,
+  CustomField,
 };

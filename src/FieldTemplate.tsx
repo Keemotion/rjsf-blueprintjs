@@ -56,6 +56,11 @@ export default function FieldTemplate(props: FieldTemplateProps) {
     );
   }
 
+  // will most of the time means it's a CustomField
+  if (fieldType === 'null') {
+    return children;
+  }
+
   return (
     <FormGroup
       label={fieldType !== 'boolean' && (label || schema.title)}
