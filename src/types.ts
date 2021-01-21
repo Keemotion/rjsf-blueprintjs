@@ -1,4 +1,3 @@
-import React from 'react';
 import { Alignment } from '@blueprintjs/core';
 
 // TODO: split it into multiple data structure, containing each the appropriate parameters instead of one struct with all optional
@@ -16,5 +15,5 @@ export interface UIOptions {
   /**
    * Use only in case of CustomField usage
    */
-  content?: React.ReactNode;
+  content?: JSX.Element;
 }
