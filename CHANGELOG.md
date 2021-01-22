@@ -4,6 +4,14 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
+## 0.0.5 - 22-01-2021
+
+* Add types for ref
+* Update dependencies
+* Add CustomField
+* Fix types issues
+* Fix behavior issues
+
 ## 0.0.4 - 14-10-2020
 
 * Fix react warning related to missing key for item in list
