@@ -49,11 +49,21 @@ export default function TextWidget({
       case 'string':
         return <InputGroup {...inputProps} type={myOptions.inputType} />;
       case 'number':
-        return <NumericInput {...inputProps} buttonPosition={myOptions.isUpDown ? undefined : 'none'} />;
+        return (
+          <NumericInput
+            {...inputProps}
+            defaultValue={schema.default ? (schema.default as string) : undefined}
+            onValueChange={(_valueAsNumber, valueAsString) => {
+              onChange(valueAsString);
+            }}
+            buttonPosition={myOptions.isUpDown ? undefined : 'none'}
+          />
+        );
       case 'integer':
         // TODO: take care of the fix on blueprint about NumericInput in controlled mode
         return (
           <NumericInput
+            {...inputProps}
             minorStepSize={null}
             majorStepSize={null}
             onValueChange={(_valueAsNumber, valueAsString) => {
@@ -61,7 +71,6 @@ export default function TextWidget({
             }}
             defaultValue={schema.default ? (schema.default as string) : undefined}
             buttonPosition={myOptions.isUpDown ? undefined : 'none'}
-            {...inputProps}
             min={schema.minimum}
           />
         );

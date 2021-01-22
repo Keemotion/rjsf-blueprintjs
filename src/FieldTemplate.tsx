@@ -19,7 +19,7 @@ export default function FieldTemplate(props: FieldTemplateProps) {
     return (
       <>
         {rawHelp || uiSchema['ui:help']}
-        {rawErrors && rawErrors.length && (
+        {rawErrors && rawErrors.length > 0 && (
           <ul className={Classes.LIST}>
             {rawErrors.map((error, i: number) => {
               return <li key={i}>{error}</li>;
@@ -54,6 +54,11 @@ export default function FieldTemplate(props: FieldTemplateProps) {
         {uiDescription}
       </>
     );
+  }
+
+  // will most of the time means it's a CustomField
+  if (fieldType === 'null') {
+    return children;
   }
 
   return (

@@ -24,6 +24,7 @@ module.exports = {
   globals: {
     Environment: true,
     _t: true,
+    JSX: true,
   },
   rules: {
     // from => https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb/rules/react.js?source=post_page---------------------------
