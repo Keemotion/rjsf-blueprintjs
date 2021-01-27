@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
-import { Checkbox } from '@blueprintjs/core';
+import { Checkbox, Switch } from '@blueprintjs/core';
 import { UIOptions } from './types';
 
 export default function CheckboxWidget({
@@ -17,12 +17,13 @@ export default function CheckboxWidget({
   options,
   label,
 }: WidgetProps) {
-  const { alignIndicator } = options as UIOptions;
+  const { alignIndicator, isSwitch } = options as UIOptions;
   const _onChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => onChange(checked);
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onBlur(id, value);
   const _onFocus = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onFocus(id, value);
+  const Component = isSwitch ? Switch : Checkbox;
   return (
-    <Checkbox
+    <Component
       id={id}
       label={label}
       checked={value}

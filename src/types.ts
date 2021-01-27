@@ -35,4 +35,8 @@ export interface UIOptions {
    * Use only in case of CustomField usage
    */
   content?: JSX.Element;
+  /**
+   * use only in case of CheckboxWidget
+   */
+  isSwitch?: boolean;
 }
