@@ -36,7 +36,19 @@ export interface UIOptions {
    */
   content?: JSX.Element;
   /**
+   * Use only in TextWidget, but make sens only in string. Should it be a field in itself?
+   */
+  link?: {
+    href: string;
+    target: string;
+  };
+  /**
    * use only in case of CheckboxWidget
    */
   isSwitch?: boolean;
+  /**
+   * Use only in TextWidget
+   */
+  leftElement?: JSX.Element;
+  rightElement?: JSX.Element;
 }

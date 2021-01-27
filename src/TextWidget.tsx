@@ -19,7 +19,7 @@ export default function TextWidget({
   placeholder,
   rawErrors,
 }: WidgetProps) {
-  const myOptions = options as UIOptions;
+  const { small, inputType, isUpDown, link, leftElement, rightElement } = options as UIOptions;
   const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) =>
     onChange(value === '' ? options.emptyValue : value);
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onBlur(id, value);
@@ -32,7 +32,7 @@ export default function TextWidget({
       placeholder,
       disabled: disabled || readonly,
       required,
-      small: myOptions.small,
+      small,
       onChange: _onChange,
       onBlur: _onBlur,
       onFocus: _onFocus,
@@ -45,9 +45,17 @@ export default function TextWidget({
       })(),
     };
 
+    if (link) {
+      return (
+        <a href={link.href} target={link.target}>
+          {inputProps.value}
+        </a>
+      );
+    }
+
     switch (schema.type) {
       case 'string':
-        return <InputGroup {...inputProps} type={myOptions.inputType} />;
+        return <InputGroup {...inputProps} type={inputType} leftElement={leftElement} rightElement={rightElement} />;
       case 'number':
         return (
           <NumericInput
@@ -56,7 +64,7 @@ export default function TextWidget({
             onValueChange={(_valueAsNumber, valueAsString) => {
               onChange(valueAsString);
             }}
-            buttonPosition={myOptions.isUpDown ? undefined : 'none'}
+            buttonPosition={isUpDown ? undefined : 'none'}
           />
         );
       case 'integer':
@@ -70,7 +78,7 @@ export default function TextWidget({
               onChange(valueAsString);
             }}
             defaultValue={schema.default ? (schema.default as string) : undefined}
-            buttonPosition={myOptions.isUpDown ? undefined : 'none'}
+            buttonPosition={isUpDown ? undefined : 'none'}
             min={schema.minimum}
           />
         );
