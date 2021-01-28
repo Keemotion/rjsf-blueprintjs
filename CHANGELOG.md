@@ -4,6 +4,12 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
+## 0.0.6 - 28-01-2021
+
+* Add option to choose between checkbox or switch
+* Add option to display link and to add element at the left and right of input field
+* Minor other improvement
+
 ## 0.0.5 - 22-01-2021
 
 * Add types for ref
