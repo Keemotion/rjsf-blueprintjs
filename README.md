@@ -22,6 +22,6 @@ This package is distributed through the GitHub Packages registry.
     ```
 
 - Then you can install the package:
-`$ npm install --save-dev @rjsf/blueprintjs`
+`$ npm i -S @keemotion/rjsf-blueprintjs`
 
 [GitHub help](https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages).
