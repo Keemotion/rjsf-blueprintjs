@@ -19,9 +19,16 @@ export default function TextWidget({
   placeholder,
   rawErrors,
 }: WidgetProps) {
-  const { small, inputType, isUpDown, link, leftElement, rightElement } = options as UIOptions;
-  const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) =>
-    onChange(value === '' ? options.emptyValue : value);
+  const { small, inputType, isUpDown, link, leftElement, rightElement, format } = options as UIOptions;
+  const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+    let nextValue = value;
+    if (value === '') {
+      nextValue = options.emptyValue as string;
+    } else if (format) {
+      nextValue = format(value);
+    }
+    return onChange(nextValue);
+  };
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onBlur(id, value);
   const _onFocus = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onFocus(id, value);
 
@@ -65,6 +72,7 @@ export default function TextWidget({
               onChange(valueAsString);
             }}
             buttonPosition={isUpDown ? undefined : 'none'}
+            type="number"
           />
         );
       case 'integer':
@@ -80,6 +88,7 @@ export default function TextWidget({
             defaultValue={schema.default ? (schema.default as string) : undefined}
             buttonPosition={isUpDown ? undefined : 'none'}
             min={schema.minimum}
+            type="number"
           />
         );
       case 'null':

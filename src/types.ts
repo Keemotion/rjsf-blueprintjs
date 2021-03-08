@@ -51,4 +51,5 @@ export interface UIOptions {
    */
   leftElement?: JSX.Element;
   rightElement?: JSX.Element;
+  format?: (value: string) => string;
 }
