@@ -4,6 +4,10 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
+## 0.0.8 - 08-03-2021
+
+* Add format option for TextWidget
+
 ## 0.0.7 - 05-02-2021
 
 * Fix module name issue
