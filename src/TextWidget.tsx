@@ -72,7 +72,7 @@ export default function TextWidget({
               onChange(valueAsString);
             }}
             buttonPosition={isUpDown ? undefined : 'none'}
-            type="number"
+            type={isUpDown ? undefined : 'number'}
           />
         );
       case 'integer':
@@ -88,7 +88,7 @@ export default function TextWidget({
             defaultValue={schema.default ? (schema.default as string) : undefined}
             buttonPosition={isUpDown ? undefined : 'none'}
             min={schema.minimum}
-            type="number"
+            type={isUpDown ? undefined : 'number'}
           />
         );
       case 'null':
