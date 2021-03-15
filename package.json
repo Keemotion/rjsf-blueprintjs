@@ -1,6 +1,6 @@
 {
   "name": "@keemotion/rjsf-blueprintjs",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "dist/index.js",
   "module": "dist/rjsf-blueprintjs.esm.js",
   "typings": "dist/index.d.ts",

@@ -4,6 +4,10 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
+## 0.0.9 - 15-03-2021
+
+* Ensure updown widget will not be in addition to the default browser behavior
+
 ## 0.0.8 - 08-03-2021
 
 * Add format option for TextWidget
