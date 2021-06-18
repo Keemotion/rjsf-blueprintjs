@@ -18,6 +18,7 @@
   "peerDependencies": {
     "@blueprintjs/core": "^3.28.0",
     "@blueprintjs/icons": "^3.18.0",
+    "@blueprintjs/select": "^3.16.4",
     "@rjsf/core": "^2.5.1",
     "react": ">=17"
   },
@@ -78,5 +79,8 @@
     "type": "git",
     "url": "git+https://github.com/Keemotion/rjsf-blueprintjs.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@blueprintjs/select": "^3.16.4"
+  }
 }
