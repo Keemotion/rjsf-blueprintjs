@@ -18,8 +18,8 @@
   "peerDependencies": {
     "@blueprintjs/core": "^3.28.0",
     "@blueprintjs/icons": "^3.18.0",
-    "@rjsf/core": "^2.0.0-alpha.6",
-    "react": ">=16"
+    "@rjsf/core": "^2.5.1",
+    "react": ">=17"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -31,7 +31,7 @@
     "@babel/preset-react": "^7.12.10",
     "@blueprintjs/core": "^3.37.0",
     "@blueprintjs/icons": "^3.24.0",
-    "@rjsf/core": "^2.4.1",
+    "@rjsf/core": "^2.5.1",
     "@types/jest": "^26.0.20",
     "@types/json-schema": "^7.0.7",
     "@types/react": "^17.0.0",
@@ -49,9 +49,9 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-test-renderer": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",

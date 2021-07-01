@@ -5,6 +5,7 @@ import TextareaWidget from './TextareaWidget';
 import TextWidget from './TextWidget';
 import UpDownWidget from './UpDownWidget';
 import RadioWidget from './RadioWidget';
+import IpMaskWidget from './IpMaskWidget';
 
 /**
  * TODO:
@@ -20,4 +21,5 @@ export default {
   TextWidget,
   UpDownWidget,
   RadioWidget,
+  IpMaskWidget,
 };
