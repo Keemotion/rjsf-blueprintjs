@@ -4,6 +4,11 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
+## 0.1.0 - 01-07-2021
+
+* Add IpMaskWidget
+* Add missing max attribute on TextWidget
+
 ## 0.0.9 - 15-03-2021
 
 * Ensure updown widget will not be in addition to the default browser behavior
