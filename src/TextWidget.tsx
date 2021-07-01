@@ -88,6 +88,7 @@ export default function TextWidget({
             defaultValue={schema.default ? (schema.default as string) : undefined}
             buttonPosition={isUpDown ? undefined : 'none'}
             min={schema.minimum}
+            max={schema.maximum}
             type={isUpDown ? undefined : 'number'}
           />
         );
