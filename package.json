@@ -16,9 +16,10 @@
     "lint": "npx eslint --config ./.eslintrc.js --ext .js --ext .jsx --ext .ts --ext .tsx ./src"
   },
   "peerDependencies": {
-    "@blueprintjs/core": "^3.28.0",
-    "@blueprintjs/icons": "^3.18.0",
-    "@rjsf/core": "^2.5.1",
+    "@blueprintjs/core": "^3.47.0",
+    "@blueprintjs/icons": "^3.27.0",
+    "@blueprintjs/select": "^3.16.6",
+    "@rjsf/core": "^3.0.0",
     "react": ">=17"
   },
   "devDependencies": {
@@ -31,18 +32,18 @@
     "@babel/preset-react": "^7.12.10",
     "@blueprintjs/core": "^3.37.0",
     "@blueprintjs/icons": "^3.24.0",
-    "@rjsf/core": "^2.5.1",
+    "@rjsf/core": "^3.0.0",
     "@types/jest": "^26.0.20",
     "@types/json-schema": "^7.0.7",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-test-renderer": "^17.0.0",
-    "@types/sinon": "^9.0.10",
+    "@types/sinon": "^10.0.2",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
@@ -78,5 +79,8 @@
     "type": "git",
     "url": "git+https://github.com/Keemotion/rjsf-blueprintjs.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@blueprintjs/select": "^3.16.4"
+  }
 }
