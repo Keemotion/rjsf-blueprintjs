@@ -4,6 +4,10 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
+## 0.1.1 - 27-07-2021
+
+* Add MultiSelectWidget
+
 ## 0.1.0 - 01-07-2021
 
 * Add IpMaskWidget
