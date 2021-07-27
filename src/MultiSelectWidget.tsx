@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback, useEffect } from 'react';
 import { Button, MenuItem } from '@blueprintjs/core';
 import { MultiSelect } from '@blueprintjs/select';
 import { WidgetProps } from '@rjsf/core';
@@ -12,7 +12,6 @@ interface EnumOptionsItem {
 
 const SchemaMultiSelect = MultiSelect.ofType<EnumOptionsItem>();
 
-let isFirstRender = true;
 export default function MultiSelectWidget({
   id,
   required,
@@ -24,16 +23,14 @@ export default function MultiSelectWidget({
   schema,
   placeholder,
 }: WidgetProps) {
+  useEffect(() => {
+    if (!value) {
+      onChange(schema.default);
+    }
+  }, []);
+
   const selected = (() => {
-    const val = (() => {
-      // TODO: fix bug about default value not working
-      if (isFirstRender) {
-        isFirstRender = false;
-        return schema.default;
-      }
-      return value;
-    })();
-    const newArray = (val as any)
+    const newArray = value
       .split(',')
       .map((item: string) => (schema.items as EnumOptionsItem[]).find((element) => element.enum[0] === item))
       .filter((i: EnumOptionsItem | undefined) => Boolean(i));

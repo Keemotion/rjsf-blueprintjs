@@ -47,7 +47,7 @@ export default function IpMaskWidget({
   return (
     <div className="ip-address-widget">
       {valueParts.map((val: string, i: number) => (
-        <>
+        <React.Fragment key={i}>
           <NumericInput
             required={required}
             readOnly={readonly}
@@ -64,7 +64,7 @@ export default function IpMaskWidget({
             placeholder={placeholder}
           />
           {i !== valueParts.length - 1 ? <i>.</i> : false}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
