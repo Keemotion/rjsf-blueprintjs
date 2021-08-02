@@ -11,6 +11,7 @@ export interface UIOptions {
    * Internally use to override the native UpDownWidget from RJSF
    */
   isUpDown?: boolean;
+  step?: number;
   /**
    * A way to define an empty value, kind of default value but for null.
    * Useful when you need a specific type. For example: when it's empty, it's not null

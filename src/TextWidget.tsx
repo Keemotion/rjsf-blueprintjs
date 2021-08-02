@@ -19,7 +19,7 @@ export default function TextWidget({
   placeholder,
   rawErrors,
 }: WidgetProps) {
-  const { small, inputType, isUpDown, link, leftElement, rightElement, format } = options as UIOptions;
+  const { small, inputType, isUpDown, link, leftElement, rightElement, format, step } = options as UIOptions;
   const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
     let nextValue = value;
     if (value === '') {
@@ -64,6 +64,7 @@ export default function TextWidget({
       case 'string':
         return <InputGroup {...inputProps} type={inputType} leftElement={leftElement} rightElement={rightElement} />;
       case 'number':
+      case 'integer':
         return (
           <NumericInput
             {...inputProps}
@@ -73,23 +74,11 @@ export default function TextWidget({
             }}
             buttonPosition={isUpDown ? undefined : 'none'}
             type={isUpDown ? undefined : 'number'}
-          />
-        );
-      case 'integer':
-        // TODO: take care of the fix on blueprint about NumericInput in controlled mode
-        return (
-          <NumericInput
-            {...inputProps}
-            minorStepSize={null}
-            majorStepSize={null}
-            onValueChange={(_valueAsNumber, valueAsString) => {
-              onChange(valueAsString);
-            }}
-            defaultValue={schema.default ? (schema.default as string) : undefined}
-            buttonPosition={isUpDown ? undefined : 'none'}
+            stepSize={step}
             min={schema.minimum}
             max={schema.maximum}
-            type={isUpDown ? undefined : 'number'}
+            minorStepSize={null}
+            majorStepSize={null}
           />
         );
       case 'null':
