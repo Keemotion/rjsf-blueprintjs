@@ -4,7 +4,11 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
-## 0.1.2 - 02-06-2021
+## 0.1.3 - 05-08-2021
+
+* Allow to provide all props for NumericInput
+
+## 0.1.2 - 02-08-2021
 
 * Add step option for numeric input
 
