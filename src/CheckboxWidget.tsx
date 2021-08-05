@@ -17,7 +17,7 @@ export default function CheckboxWidget({
   options,
   label,
 }: WidgetProps) {
-  const { alignIndicator, isSwitch } = options as UIOptions;
+  const { alignIndicator, isSwitch } = options as unknown as UIOptions;
   const _onChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => onChange(checked);
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onBlur(id, value);
   const _onFocus = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) => onFocus(id, value);

@@ -16,7 +16,7 @@ export default function SelectWidget({
   autofocus,
   options,
 }: WidgetProps) {
-  const { enumOptions } = options as UIOptions;
+  const { enumOptions } = options as unknown as UIOptions;
   const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLSelectElement>) => onChange(value);
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLSelectElement>) => onBlur(id, value);
   const _onFocus = ({ target: { value } }: React.FocusEvent<HTMLSelectElement>) => onFocus(id, value);

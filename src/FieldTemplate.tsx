@@ -9,7 +9,10 @@ export default function FieldTemplate(props: FieldTemplateProps) {
 
   const fieldType = useMemo(() => schema.type, [schema]);
 
-  const uiOptions: UIOptions = useMemo(() => (uiSchema['ui:options'] ? uiSchema['ui:options'] : {}), [uiSchema]);
+  const uiOptions = useMemo(
+    () => (uiSchema['ui:options'] ? uiSchema['ui:options'] : {}) as unknown as UIOptions,
+    [uiSchema]
+  );
   const { inline } = uiOptions;
 
   const helperText = useMemo(() => {
