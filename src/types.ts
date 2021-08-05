@@ -1,4 +1,4 @@
-import { Alignment } from '@blueprintjs/core';
+import { Alignment, NumericInputProps } from '@blueprintjs/core';
 
 // TODO: split it into multiple data structure, containing each the appropriate parameters instead of one struct with all optional
 export interface UIOptions {
@@ -11,7 +11,8 @@ export interface UIOptions {
    * Internally use to override the native UpDownWidget from RJSF
    */
   isUpDown?: boolean;
-  step?: number;
+  numericInputProps: NumericInputProps;
+
   /**
    * A way to define an empty value, kind of default value but for null.
    * Useful when you need a specific type. For example: when it's empty, it's not null

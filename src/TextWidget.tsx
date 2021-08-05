@@ -19,7 +19,9 @@ export default function TextWidget({
   placeholder,
   rawErrors,
 }: WidgetProps) {
-  const { small, inputType, isUpDown, link, leftElement, rightElement, format, step } = options as UIOptions;
+  const { small, inputType, isUpDown, link, leftElement, rightElement, format, numericInputProps } =
+    options as unknown as UIOptions;
+
   const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
     let nextValue = value;
     if (value === '') {
@@ -74,11 +76,11 @@ export default function TextWidget({
             }}
             buttonPosition={isUpDown ? undefined : 'none'}
             type={isUpDown ? undefined : 'number'}
-            stepSize={step}
+            stepSize={numericInputProps?.stepSize}
             min={schema.minimum}
             max={schema.maximum}
-            minorStepSize={null}
-            majorStepSize={null}
+            minorStepSize={numericInputProps?.minorStepSize}
+            majorStepSize={numericInputProps?.majorStepSize}
           />
         );
       case 'null':
