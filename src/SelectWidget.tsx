@@ -15,6 +15,7 @@ export default function SelectWidget({
   onFocus,
   autofocus,
   options,
+  schema
 }: WidgetProps) {
   const { enumOptions } = options as unknown as UIOptions;
   const _onChange = ({ target: { value } }: React.ChangeEvent<HTMLSelectElement>) => onChange(value);
@@ -25,7 +26,7 @@ export default function SelectWidget({
       autoFocus={autofocus}
       required={required}
       disabled={disabled || readonly}
-      value={value}
+      value={value || schema.default}
       id={id}
       options={enumOptions}
       onChange={_onChange}
