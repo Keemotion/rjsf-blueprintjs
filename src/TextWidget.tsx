@@ -47,6 +47,9 @@ export default function TextWidget({
       onFocus: _onFocus,
       autoFocus: autofocus,
       value: (() => {
+        if (!value) {
+          return schema.default;
+        }
         if (typeof value === 'number') {
           return String(value);
         }

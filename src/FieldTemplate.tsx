@@ -5,9 +5,12 @@ import { Classes, FormGroup } from '@blueprintjs/core';
 import { UIOptions } from './types';
 
 export default function FieldTemplate(props: FieldTemplateProps) {
-  const { children, displayLabel, rawDescription, rawHelp, uiSchema, rawErrors, label, schema, id, required } = props;
+  const { children, displayLabel, rawDescription, rawHelp, uiSchema, rawErrors, label, schema, id, required, hidden } =
+    props;
 
-  const fieldType = useMemo(() => schema.type, [schema]);
+  if (hidden) {
+    return children;
+  }
 
   const uiOptions = useMemo(
     () => (uiSchema['ui:options'] ? uiSchema['ui:options'] : {}) as unknown as UIOptions,
@@ -50,7 +53,7 @@ export default function FieldTemplate(props: FieldTemplateProps) {
     return undefined;
   }, [displayLabel, rawDescription]);
 
-  if (fieldType === 'object' || fieldType === 'array') {
+  if (schema.type === 'object' || schema.type === 'array') {
     return (
       <>
         {children}
@@ -60,13 +63,13 @@ export default function FieldTemplate(props: FieldTemplateProps) {
   }
 
   // will most of the time means it's a CustomField
-  if (fieldType === 'null') {
+  if (schema.type === 'null') {
     return children;
   }
 
   return (
     <FormGroup
-      label={fieldType !== 'boolean' && (label || schema.title)}
+      label={schema.type !== 'boolean' && (label || schema.title)}
       labelFor={id}
       inline={inline}
       intent={rawErrors && rawErrors.length ? 'danger' : undefined}
