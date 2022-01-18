@@ -5,6 +5,7 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 ## FIXME - insert your changes after this line
 
 * Improve radio widget
+* Display a label even for boolean type
 
 ## 0.1.3 - 05-08-2021
 
