@@ -6,21 +6,21 @@ import { RadioGroup, Radio } from '@blueprintjs/core';
 import { UIOptions } from './types';
 
 export default function RadioWidget(props: WidgetProps) {
-  const { options, onChange, value, disabled, readonly } = props;
+  const { options, onChange, value, disabled, readonly, uiSchema } = props;
   const _onChange = ({ currentTarget: { value } }: React.FormEvent<HTMLInputElement>) => onChange(value);
   const { enumOptions } = options as unknown as UIOptions;
   return (
     <RadioGroup name={props.id} disabled={disabled || readonly} onChange={_onChange} selectedValue={value}>
-      {enumOptions.map((it: any) => (
+      {enumOptions.map((it: any, index: number) => (
         <Radio key={it.value} name={props.id} label={it.label} value={it.value}>
-          {it.schema.help && (
+          {uiSchema['ui:radio-help'] && uiSchema['ui:radio-help'][index] && (
             <div
               className={classNames({
                 [props.id]: true,
                 'radio-help': true,
               })}
             >
-              {it.schema.help}
+              {uiSchema['ui:radio-help'][index]}
             </div>
           )}
         </Radio>
