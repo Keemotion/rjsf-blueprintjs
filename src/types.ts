@@ -1,4 +1,11 @@
 import { Alignment, NumericInputProps } from '@blueprintjs/core';
+import { UiSchema } from '@rjsf/core';
+
+export interface UISchemaExtended extends UiSchema {
+  'ui:radio-help'?: string[];
+  'ui:radio-label'?: string[];
+  'ui:switch-label'?: string;
+}
 
 // TODO: split it into multiple data structure, containing each the appropriate parameters instead of one struct with all optional
 export interface UIOptions {
