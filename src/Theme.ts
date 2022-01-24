@@ -12,7 +12,7 @@ const Theme: ThemeProps = {
     ...widgets,
     ...Widgets,
   },
-  ObjectFieldTemplate,
+  ObjectFieldTemplate: ObjectFieldTemplate as any,
   FieldTemplate,
 };
 
