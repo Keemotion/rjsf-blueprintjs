@@ -69,7 +69,7 @@ export default function FieldTemplate(props: FieldTemplateProps) {
 
   return (
     <FormGroup
-      label={schema.type !== 'boolean' && (label || schema.title)}
+      label={label || schema.title}
       labelFor={id}
       inline={inline}
       intent={rawErrors && rawErrors.length ? 'danger' : undefined}
