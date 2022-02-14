@@ -1,29 +1,15 @@
 import React from 'react';
 import { Divider, Classes } from '@blueprintjs/core';
 import { ObjectFieldTemplateProps } from '@rjsf/core';
-import type { JSONSchema7 } from 'json-schema';
 
 const ROOT = 'root';
 
-// TODO: make this global
-interface CustomSchema extends JSONSchema7 {
-  noTitle: boolean;
-}
+export default function ObjectFieldTemplate(props: ObjectFieldTemplateProps) {
+  const { idSchema, description, properties, title } = props;
 
-interface Props extends ObjectFieldTemplateProps {
-  schema: CustomSchema;
-}
-
-export default function ObjectFieldTemplate(props: Props) {
-  const {
-    idSchema,
-    schema: { title, noTitle },
-    description,
-    properties,
-  } = props;
   return (
     <div className={`schema-${idSchema.$id}`}>
-      {title && !noTitle && (
+      {title && (
         <>
           <legend className={`${idSchema.$id}-title ${Classes.HEADING}`}>{title}</legend>
           {idSchema.$id === ROOT && <Divider className="root-divider" style={{ marginBottom: 20 }} />}
