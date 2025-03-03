@@ -4,6 +4,8 @@ This file collects RJSF blueprintjs theme changes through the subsequent version
 
 ## FIXME - insert your changes after this line
 
+## 1.0.0 - 03-03-2025
+* GAT-2315: Update node. Update bp to v5. Update other depts. This is breaking change.
 * Improve radio widget
 * Display a label even for boolean type
 
