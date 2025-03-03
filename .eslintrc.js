@@ -12,7 +12,6 @@ module.exports = {
   extends: [
     // 'plugin:@typescript-eslint/recommended',
     'airbnb',
-    'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
@@ -50,7 +49,6 @@ module.exports = {
     'jsx-a11y/label-has-for': 'off',
     'max-len': 'off',
     semi: 2,
-    'comma-dangle': ['error', 'always-multiline', { functions: 'never' }],
     'react/no-multi-comp': 'off',
     'lines-between-class-members': 'off',
     'react/destructuring-assignment': 'off',
