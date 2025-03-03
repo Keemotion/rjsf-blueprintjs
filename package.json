@@ -13,7 +13,9 @@
     "prepack": "npm run build",
     "build": "rimraf dist && tsdx build",
     "test": "tsdx test",
-    "lint": "npx eslint --config ./.eslintrc.js --ext .js --ext .jsx --ext .ts --ext .tsx ./src"
+    "lint": "npx eslint --config ./.eslintrc.js --ext .js --ext .jsx --ext .ts --ext .tsx ./src",
+    "prepare.release": "./prepare-release.sh",
+    "pr": "npm run prepare.release"
   },
   "peerDependencies": {
     "@blueprintjs/core": "^5.17.0",
