@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow, react/no-array-index-key */
 import React from 'react';
 import { WidgetProps } from '@rjsf/core';
-import { InputGroup, NumericInput, Intent } from '@blueprintjs/core';
+import { InputGroup, Intent, NumericInput } from '@blueprintjs/core';
 import { UIOptions } from './types';
 
 export default function TextWidget({
@@ -41,7 +41,7 @@ export default function TextWidget({
       placeholder,
       disabled: disabled || readonly,
       required,
-      small,
+      ...(small ? { size: 'small' as const } : {}),
       onChange: _onChange,
       onBlur: _onBlur,
       onFocus: _onFocus,
