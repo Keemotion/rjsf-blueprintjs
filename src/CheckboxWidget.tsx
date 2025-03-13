@@ -31,7 +31,7 @@ export default function CheckboxWidget({
   return (
     <Component
       id={id}
-      label={uiSchema['ui:switch-label'] || label}
+      label={uiSchema['ui:label'] || label}
       checked={value}
       required={required}
       disabled={disabled || readonly}

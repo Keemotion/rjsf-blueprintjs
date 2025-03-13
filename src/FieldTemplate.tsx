@@ -69,7 +69,7 @@ export default function FieldTemplate(props: FieldTemplateProps) {
 
   return (
     <FormGroup
-      label={label || schema.title}
+      label={label}
       labelFor={id}
       inline={inline}
       intent={rawErrors && rawErrors.length ? 'danger' : undefined}
